@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "AWS Capstone Order Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "order_id",
+      "value": "REPLACE_WITH_CREATED_ORDER_ID"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Products",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/products"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"customer_id\": \"CUST001\", \"items\": [{\"product_id\": \"PROD101\", \"quantity\": 2}]}"
+        },
+        "url": "{{base_url}}/orders"
+      }
+    },
+    {
+      "name": "List Orders",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/orders"
+      }
+    },
+    {
+      "name": "Get Order",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/orders/{{order_id}}"
+      }
+    },
+    {
+      "name": "Cancel Order",
+      "request": {
+        "method": "PATCH",
+        "url": "{{base_url}}/orders/{{order_id}}/cancel"
+      }
+    }
+  ]
+}

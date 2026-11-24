@@ -1,0 +1,8 @@
+{
+  "Records": [
+    {
+      "messageId": "test-message-1",
+      "body": "{\"order_id\": \"ORD-REPLACE\"}"
+    }
+  ]
+}

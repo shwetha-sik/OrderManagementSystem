@@ -1,0 +1,2 @@
+# Dependencies packaged into the SQS worker Lambda ZIP.
+boto3==1.43.18
